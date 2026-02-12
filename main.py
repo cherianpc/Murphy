@@ -168,20 +168,20 @@ def run_autonomous_stupid():
     # Step 2: Turn 90 degrees 
     brain.screen.set_cursor(3, 1)
     brain.screen.print("Step 2: Turn")
-    if not turn_in_place(-.87, velocity_percent=50):
+    if not turn_in_place(.87, velocity_percent=50):
         return
     
     # Step 3: Drive forward 2 turns
     brain.screen.set_cursor(4, 1)
     brain.screen.print("Step 3: Forward")
-    if not drive_distance(2.55, velocity_percent=50):
+    if not drive_distance(2.35, velocity_percent=50):
         return  # Emergency stopped
 
 
     # Step 4: Turn 90 degrees 
     brain.screen.set_cursor(5, 1)
     brain.screen.print("Step 4: Turn")
-    if not turn_in_place(-.78, velocity_percent=50):
+    if not turn_in_place(.78, velocity_percent=50):
         return
 
     '''# Step 5 - Deploy Scoop
@@ -204,9 +204,31 @@ def run_autonomous_stupid():
     #Step 8: Intake
     brain.screen.set_cursor(9, 1)
     brain.screen.print("Step 8: Intake and Conv")
-    intake_in(duration_sec=10.0, speed=100)
+    intake_in(duration_sec=2.6, speed=100)
     
+    # Step 9 - Deploy Scoop
+    brain.screen.set_cursor(10, 1)
+    brain.screen.print("Step 5: Scoop")
+    set_scoop(True)
 
+    
+    # step 10 drive to vert
+    brain.screen.set_cursor(11, 1)
+    brain.screen.print("Step 3: Forward")
+    if not drive_distance(1.8, velocity_percent=65):
+        return  # Emergency stopped
+    
+    '''
+    # step 10 drive to vert
+    brain.screen.set_cursor(12, 1)
+    brain.screen.print("Step 3: Forward")
+    if not drive_distance(-2.7, velocity_percent=50):
+        return  # Emergency stopped
+
+    brain.screen.set_cursor(13, 1)
+    brain.screen.print("Step 8: Intake and Conv")
+    intake_in(duration_sec=7.5, speed=100)
+    '''
 
     brain.screen.set_cursor(20, 1)
     brain.screen.print("Auto Complete!")
