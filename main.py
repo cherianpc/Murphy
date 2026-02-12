@@ -195,7 +195,7 @@ def run_autonomous_stupid():
     #Step 8: Intake
     brain.screen.set_cursor(9, 1)
     brain.screen.print("Step 8: Intake and Conv")
-    intake_in(duration_sec=2.6, speed=100)
+    intake_in(duration_sec=8, speed=100)
 
 
     brain.screen.set_cursor(20, 1)
