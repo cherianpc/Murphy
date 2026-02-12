@@ -162,7 +162,7 @@ def run_autonomous_stupid():
     # Step 1: Drive forward 2 turns
     brain.screen.set_cursor(2, 1)
     brain.screen.print("Step 1: Forward")
-    if not drive_distance(1, velocity_percent=50):
+    if not drive_distance(0.5, velocity_percent=50):
         return  # Emergency stopped
     
     brain.screen.set_cursor(20, 1)
