@@ -162,24 +162,59 @@ def run_autonomous_stupid():
     # Step 1: Drive forward 2 turns
     brain.screen.set_cursor(2, 1)
     brain.screen.print("Step 1: Forward")
-    if not drive_distance(2, velocity_percent=70):
+    if not drive_distance(1.75, velocity_percent=50):
         return  # Emergency stopped
     
     # Step 2: Turn 90 degrees 
     brain.screen.set_cursor(3, 1)
     brain.screen.print("Step 2: Turn")
-    if not turn_in_place(0.3, velocity_percent=50):
+    if not turn_in_place(-.87, velocity_percent=50):
         return
     
+    # Step 3: Drive forward 2 turns
+    brain.screen.set_cursor(4, 1)
+    brain.screen.print("Step 3: Forward")
+    if not drive_distance(2.55, velocity_percent=50):
+        return  # Emergency stopped
+
+
+    # Step 4: Turn 90 degrees 
+    brain.screen.set_cursor(5, 1)
+    brain.screen.print("Step 4: Turn")
+    if not turn_in_place(-.78, velocity_percent=50):
+        return
+
+    '''# Step 5 - Deploy Scoop
     brain.screen.set_cursor(6, 1)
+    brain.screen.print("Step 5: Scoop")
+    set_scoop(True)'''
+
+    '''# Step 6: Drive forward AND RAM THE VERTICAL STAND
+    brain.screen.set_cursor(7, 1)
+    brain.screen.print("Step 6: Forward")
+    if not drive_distance(1.25, velocity_percent=60):
+        return  # Emergency stopped'''
+
+    # Step 7: Drive forward and go to the long goal
+    brain.screen.set_cursor(8, 1)
+    brain.screen.print("Step 6: Forward to Long GOal")
+    if not drive_distance(-1, velocity_percent=60):
+        return  # Emergency stopped
+
+    #Step 8: Intake
+    brain.screen.set_cursor(9, 1)
+    brain.screen.print("Step 8: Intake and Conv")
+    intake_in(duration_sec=10.0, speed=100)
+    
+
+
+    brain.screen.set_cursor(20, 1)
     brain.screen.print("Auto Complete!")
     
-    # ================================================
-    # HOW TO ADD MORE STEPS:
-    # ================================================
-    # brain.screen.print("Step 3: Intake")
-    # if not intake_in(1.5, speed=80):  # Try step 3
-    #     return  # Stop if fails
+    
+    #brain.screen.print("Step 3: Intake")
+    #if not intake_in(1.5, speed=80):  # Try step 3
+    #    return  # Stop if fails
     #
     # brain.screen.set_cursor(5, 1)
     # brain.screen.print("Step 4: Shoot")
