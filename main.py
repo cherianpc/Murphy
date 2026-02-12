@@ -184,16 +184,7 @@ def run_autonomous_stupid():
     if not turn_in_place(.78, velocity_percent=50):
         return
 
-    '''# Step 5 - Deploy Scoop
-    brain.screen.set_cursor(6, 1)
-    brain.screen.print("Step 5: Scoop")
-    set_scoop(True)'''
 
-    '''# Step 6: Drive forward AND RAM THE VERTICAL STAND
-    brain.screen.set_cursor(7, 1)
-    brain.screen.print("Step 6: Forward")
-    if not drive_distance(1.25, velocity_percent=60):
-        return  # Emergency stopped'''
 
     # Step 7: Drive forward and go to the long goal
     brain.screen.set_cursor(8, 1)
@@ -205,30 +196,7 @@ def run_autonomous_stupid():
     brain.screen.set_cursor(9, 1)
     brain.screen.print("Step 8: Intake and Conv")
     intake_in(duration_sec=2.6, speed=100)
-    
-    # Step 9 - Deploy Scoop
-    brain.screen.set_cursor(10, 1)
-    brain.screen.print("Step 5: Scoop")
-    set_scoop(True)
 
-    
-    # step 10 drive to vert
-    brain.screen.set_cursor(11, 1)
-    brain.screen.print("Step 3: Forward")
-    if not drive_distance(1.8, velocity_percent=65):
-        return  # Emergency stopped
-    
-    '''
-    # step 10 drive to vert
-    brain.screen.set_cursor(12, 1)
-    brain.screen.print("Step 3: Forward")
-    if not drive_distance(-2.7, velocity_percent=50):
-        return  # Emergency stopped
-
-    brain.screen.set_cursor(13, 1)
-    brain.screen.print("Step 8: Intake and Conv")
-    intake_in(duration_sec=7.5, speed=100)
-    '''
 
     brain.screen.set_cursor(20, 1)
     brain.screen.print("Auto Complete!")
